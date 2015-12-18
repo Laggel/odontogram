@@ -1,4 +1,4 @@
-var app = angular.module('odontogram', ['ui.bootstrap','ngSanitize','dialogs.main']);
+var app = angular.module('odontogram', ['ui.bootstrap','ngSanitize','dialogs.main','templates']);
 
 app.factory('Tooth', function () {
   
