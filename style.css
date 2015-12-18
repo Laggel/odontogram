@@ -1,0 +1,193 @@
+/* Mouth */ 
+.mouth {
+  overflow:auto;
+}
+.jaw {
+  display:flex;
+  flex-wrap: nowrap;
+  /* justify-content:center; */
+}
+
+.mouthCenter {
+  width:30px;
+  height:30px;
+}
+
+/* Tooth */
+.tooth {
+  margin:5px;
+}
+
+.picture {
+  width:45px;
+  height:45px;
+}
+
+.float-top {
+  top:0;
+  left:0;
+  position:absolute;
+}
+
+.opacity:hover .imagePart, .opacity:hover .toothface {
+  opacity:0.5;
+}
+.opacity:hover .popover{
+  opacity:1;
+}
+.popover{
+  z-index:200;
+}
+/* Toothface */
+.toothface {
+  width:15px;
+  height:15px;
+}
+
+.toothface > div {
+  width:100%;
+  height:100%;
+  border:1px solid #fff;
+  background-color: gray;
+  border-radius:25%;
+}
+
+.toothface > div.active {
+    color: #333;
+    border: 2px solid yellow;
+}
+
+.toothface.center:before {
+  clear:both;
+}
+
+.toothface.center {
+  clear:both;
+  margin-left:15px;
+}
+
+/** Update Tooth **/
+
+/* Zoom */ 
+.big * .picture {
+  width:90px;
+  height:90px;
+}
+
+.big * .toothface {
+  cursor:pointer;
+  width:30px;
+  height:30px;
+}
+
+
+.big * .toothface.center {
+  margin-left:30px;
+}
+
+/* Faces Fill */
+.red, .toothface > div.red {
+  color:red;
+  background-color:red;
+}
+
+.blue, .toothface > div.blue {
+  background-color:blue;
+}
+
+/** Tooth Parts **/
+
+/* Reorder depending on quadrant */
+
+.toothPart {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+.quadrant1 .toothPart, .quadrant2 .toothPart {
+  flex-direction: column;
+}
+
+.quadrant3 .toothPart, .quadrant4 .toothPart{
+  flex-direction: column-reverse;
+}
+
+.toothPart  > .imagePart {
+  order:1;
+  position: relative;
+}
+
+.toothPart > .facesPart {
+  order:2;
+}
+
+.toothPart > .facesPart > .parent {
+  display: flex;
+}
+
+.quadrant2 .toothPart > .facesPart > .parent,
+.quadrant4 .toothPart > .facesPart > .parent {
+  flex-direction: row-reverse;
+}
+
+
+.toothPart > .facesPart > .parent > .distal {
+  order:1;
+}
+.toothPart > .facesPart > .parent > .oclussal {
+  order:2;
+}
+.toothPart > .facesPart > .parent > .messial {
+  order:3;
+}
+
+.toothPart > .numberPart {
+  order:3;
+  text-align:center;
+}
+
+/*Convetions */
+
+.triangle{
+  position: relative;
+}
+.triangle:before{
+  border-top: 0;
+  border-right: 10px solid white;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  content: "";
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+/** Other **/
+
+/*Prettify JSON*/
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+/* Modal */
+.modal.ng-enter {
+  transition: opacity .2s ease-out;
+  opacity: 0;
+}
+.modal.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.modal.ng-leave {
+  transition: opacity .2s ease-out;
+  opacity: 0;
+}
+.modal.ng-leave.ng-leave-active {
+  opacity: 1;
+}

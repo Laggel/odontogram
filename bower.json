@@ -1,0 +1,27 @@
+{
+  "name": "odontogram",
+  "version": "0.0.0",
+  "authors": [
+    "Caleb De La Cruz <delacruzpaulino@gmail.com>"
+  ],
+  "description": "Package for associating information with a specific tooth.",
+  "main": "mouth.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "tooth",
+    "odontogram",
+    "teeth",
+    "dentist"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ]
+}

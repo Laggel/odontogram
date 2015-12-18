@@ -1,0 +1,33 @@
+<div class="tooth toothPart cuadrante{{cuadrante}}" ng-click="update(tooth)">
+  <div class="imagePart">
+    <canvas width="45" height="45" id="canvas" drawing 
+    class="picture level2" 
+    over="tooth.root.over.picture" 
+    fill="tooth.root.fill.picture" 
+    base="'http://i.imgur.com/apo4I8a.png'"></canvas>
+ 
+    <canvas width="45" height="45" id="canvas" drawing 
+    class="picture float-top level3" 
+    over="tooth.crown.over.picture" 
+    fill="tooth.crown.fill.picture" 
+    base="'http://i.imgur.com/fSb96IV.png'"></canvas>
+
+    <div ng-style="{'background-image':'url('+tooth.complete.over.picture+')', 'background-size': '100% auto'}" 
+    class="picture float-top level4"></div>
+  </div>
+  <div class="facesPart">
+    <div toothface class="toothface center" uib-popover="Bucal o Vestibular" popover-trigger="mouseenter" ng-model="tooth.faces.buccal">
+    </div>
+    <div class="parent">
+      <div toothface class="toothface distal" uib-popover="Distal" popover-trigger="mouseenter" ng-model="tooth.faces.distal">
+      </div>
+      <div toothface class="toothface oclussal" uib-popover="Oclusal o Incisal" popover-trigger="mouseenter" ng-model="tooth.faces.occlusal">
+      </div>
+      <div toothface class="toothface messial" uib-popover="Mesial" popover-trigger="mouseenter" ng-model="tooth.faces.messial">
+      </div>
+    </div>
+    <div toothface class="toothface center" uib-popover="Lingual o Palatino" popover-trigger="mouseenter" ng-model="tooth.faces.lingual">
+    </div>
+  </div>
+  <div class="numberPart">{{tooth.id}}</div>
+</div>

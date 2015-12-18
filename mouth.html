@@ -1,0 +1,29 @@
+<div class="mouth">
+<div class="jaw">
+<tooth ng-model="tooth" conventions="conventions" 
+       class="opacity quadrant1"
+       update="updateTooth(tooth)"
+       ng-repeat="tooth in mouth.quadrant1 track by tooth.id">
+</tooth>
+<div class="mouthCenter"></div>
+<tooth ng-model="tooth" conventions="conventions" 
+       class="opacity quadrant2"
+       update="updateTooth(tooth)"
+       ng-repeat="tooth in mouth.quadrant2 track by tooth.id">
+</tooth>
+</div>
+<div class="jaw">
+<tooth ng-model="tooth" conventions="conventions" 
+       class="opacity quadrant3"
+       update="updateTooth(tooth)"
+       ng-repeat="tooth in mouth.quadrant3 track by tooth.id">
+</tooth>
+<div class="mouthCenter"></div>
+<tooth ng-model="tooth" conventions="conventions" 
+       class="opacity quadrant4"
+       update="updateTooth(tooth)"
+       ng-repeat="tooth in mouth.quadrant4 track by tooth.id">
+</tooth>
+</div>
+<update-tooth ng-model="currentTooth"></update-tooth>
+</div>

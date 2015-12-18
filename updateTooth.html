@@ -1,0 +1,86 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{labels.title}} {{tooth.id}}</h4></div>
+<div class="modal-body">
+  <ng-form name="nameDialog" novalidate role="form">
+    <div>
+      <div class="row">
+        <div class="col-xs-2">
+          <div class="big" ng-include src="'tooth.html'"></div>
+        </div>
+
+        <div class="col-xs-9">
+
+          <label>{{labels.tooth}}</label>
+          <div class="form-group" ng-class="{true: 'has-error'}[nameDialog.comment.$dirty && nameDialog.comment.$invalid]">
+            <div class="btn-group">
+              <button type="button" ng-repeat="convention in conventions.complete.fill track by convention.id" class="btn btn-default" title="{{convention.description}}" ng-model="tooth.complete.fill" uib-btn-radio="convention" uncheckable ng-disabled="disableTooth()">
+                <img ng-src="{{convention.picture}}" width=20 height=20>
+              </button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default" ng-repeat="convention in conventions.complete.over track by convention.id" title="{{convention.description}}" ng-model="tooth.complete.over" uib-btn-radio="convention" uncheckable ng-disabled="disableTooth()">
+                <img ng-src="{{convention.picture}}" width=20 height=20>
+              </button>
+            </div>
+          </div>
+
+          <label for="course">{{labels.root}}</label>
+          <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[nameDialog.comment.$dirty && nameDialog.comment.$invalid]">
+            <div class="btn-group">
+
+              <button type="button" class="btn btn-default" ng-repeat="convention in conventions.root.fill track by convention.id" title="{{convention.description}}" ng-model="tooth.root.fill" uib-btn-radio="convention" uncheckable ng-disabled="disableToothPart()">
+                <div class='triangle'>
+                  <img ng-src="{{convention.picture}}" width=20 height=20>
+                </div>
+
+              </button>
+
+            </div>
+            <div class="btn-group">
+
+              <button type="button" class="btn btn-default" ng-repeat="convention in conventions.root.over track by convention.id" title="{{convention.description}}" ng-model="tooth.root.over" uib-btn-radio="convention" uncheckable ng-disabled="disableToothPart()">
+                <img ng-src="{{convention.picture}}" width=20 height=20>
+              </button>
+            </div>
+          </div>
+
+          <label for="course">{{labels.crown}}</label>
+
+          <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[nameDialog.comment.$dirty && nameDialog.comment.$invalid]">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default" ng-repeat="convention in conventions.crown.fill track by convention.id" title="{{convention.description}}" ng-model="tooth.crown.fill" uib-btn-radio="convention" uncheckable ng-disabled="disableToothPart()">
+                <img class="circle" ng-src="{{convention.picture}}" width=20 height=20>
+              </button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default" ng-repeat="convention in conventions.crown.over track by convention.id" title="{{convention.description}}" ng-model="tooth.crown.over" uib-btn-radio="convention" uncheckable ng-disabled="disableToothPart()">
+                <img class="circle" ng-src="{{convention.picture}}" width=20 height=20>
+              </button>
+            </div>
+          </div>
+
+          <label for="course">{{labels.faces}}</label>
+
+          <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[nameDialog.comment.$dirty && nameDialog.comment.$invalid]">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default" ng-repeat="convention in conventions.face.fill track by convention.id" title="{{convention.description}}" ng-disabled="disableToothPart()" ng-click="setConventionToFaces(convention)">
+                <img ng-src="{{convention.picture}}" width=20 height=20>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[nameDialog.comment.$dirty && nameDialog.comment.$invalid]">
+            <label class="control-label" for="course">{{labels.comment}}</label>
+            <textarea id="comment" name="comment" class="form-control" ng-model="tooth.comment"></textarea>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </ng-form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+  <button type="button" class="btn btn-primary" ng-click="done()">Save</button>
+</div>
